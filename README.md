@@ -23,3 +23,7 @@ npx tsc --init
 "dev": "nodemon --exec ts-node ./src/index.ts" 
 ```
 
+### 
+```
+typeorm.io
+```
