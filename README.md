@@ -12,8 +12,14 @@ yarn add -D typescript nodemon ts-node @types/express @types/node
 yarn add express pg typeorm dotenv reflect-metadata
 ```
 
+### Inicializar o TS 
+```bash
+npx tsc --init
+```
+
 ### Package.json 
 ```bash
 # execucao em ambiente dev com nodemon que executa outro comando em TS
 "dev": "nodemon --exec ts-node ./src/index.ts" 
 ```
+
