@@ -7,13 +7,13 @@ yarn dev
 
 ### Gerar file migrations.. run  
 ```bash
+# Rodar esse comando sempre que criar algum atributo em alguma entidade
 yarn migration:generate
-```
 
-### Inserir no banco as migrations .. run  
-```bash
+# Inserir no banco as migrations .. run
 yarn migration:run
 ```
+
 ---
 
 ## Primeiros passos para iniciar o projeto
