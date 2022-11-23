@@ -37,13 +37,21 @@ yarn dev
 
 ### Migration:generate
 ```bash
-# Gerar automaticamente uma migration no banco de dados 
-# Coloque essa linha no scripts ./package.json
+# Gerar automaticamente uma pasta no projeto migration das querys do banco de dados 
 "migration:generate": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:generate ./src/migrations/default",
+
+# Gerar automaticamente as querys no banco de dados 
 "migration:run": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:run"
+
+# Coloque essas linhas no scripts ./package.json
 ```
 
-### Gerar as migrations.. run  
+### Gerar file migrations.. run  
 ```bash
 yarn migration:generate
+```
+
+### Inserir no banco as migrations .. run  
+```bash
+yarn migration:run
 ```
