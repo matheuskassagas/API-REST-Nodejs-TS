@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, JoinColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Room } from "./Room";
 
 @Entity('videos')
 export class Video{
@@ -10,4 +11,9 @@ export class Video{
 
     @Column({ type: 'text' })
     url: string
+
+    //Relacionamentos entre classes
+    @ManyToOne(() => Room, room => room.videos)
+    @JoinColumn({name: 'room_id'}) //Nomeando a FK na tabela do banco
+    room: Room
 }
