@@ -30,6 +30,8 @@ typeorm.io
 ```
 ### Run application
 ```bash
+# Necessario fazer as configuracoes do banco localmente 
+# Outra opcao seria utilizar o docker compose
 yarn dev
 ```
 
