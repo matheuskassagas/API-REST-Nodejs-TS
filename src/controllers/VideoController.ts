@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
-import { RoomRepository } from "../repositories/RoomRepository";
+import { VideoRepository } from "../repositories/VideoRepository";
 
-export class RoomController {
+export class VideoController {
   async create(req: Request, res: Response){ // EndPoint Create
-    const {name, description} = req.body
+    const {title, url} = req.body
 
     try { 
-      const newSubject = RoomRepository.create({name, description}) // recebe o dado da requisicao e armazena na variavel newSub...
-      await RoomRepository.save(newSubject) // salva o dado no banco 
+      const newSubject = VideoRepository.create({title, url}) // recebe o dado da requisicao e armazena na variavel newSub...
+      await VideoRepository.save(newSubject) // salva o dado no banco 
       return res.status(201).json(newSubject) // retorna status create e o dado
 
       console.log(newSubject);
