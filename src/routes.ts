@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { SubjectController } from "./Controllers/SubjectContrller";
+import { SubjectController } from "./controllers/SubjectController";
+
 
 const routes = Router()
 
