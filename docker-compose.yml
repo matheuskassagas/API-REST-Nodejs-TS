@@ -9,7 +9,7 @@ services:
       - ./.docker/metabase-data:/metabase-data
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: secret
+      PGADMIN_DEFAULT_PASSWORD: postgres
     depends_on:
       - postgres
     links:

@@ -1,9 +1,10 @@
-### Inicar projeto
+### Inicar projeto 
 ```bash
+# para iniciar um projeto
 yarn init -y
 ```
 
-### Bibliotecas
+### Bibliotecas utilizadas
 ```bash
 # desenvolvimento
 yarn add -D typescript nodemon ts-node @types/express @types/node
@@ -23,7 +24,18 @@ npx tsc --init
 "dev": "nodemon --exec ts-node ./src/index.ts" 
 ```
 
-### 
+### Docs 
 ```
 typeorm.io
+```
+### Run application
+```bash
+yarn dev
+```
+
+### Migration:generate
+```bash
+# Gerar automaticamente uma migration no banco de dados 
+# Coloque essa linha no scripts ./package.json
+"migration:generate": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:generate ./src/migrations/default"
 ```
