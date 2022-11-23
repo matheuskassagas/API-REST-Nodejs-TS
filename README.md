@@ -1,3 +1,24 @@
+### Run application
+```bash
+# Necessario fazer as configuracoes do banco localmente (postgres)
+# Outra opcao seria utilizar o docker compose
+yarn dev
+```
+
+### Gerar file migrations.. run  
+```bash
+yarn migration:generate
+```
+
+### Inserir no banco as migrations .. run  
+```bash
+yarn migration:run
+```
+---
+
+## Primeiros passos para iniciar o projeto
+- Caso baixar o projeto, não é necessário utilizar esses comandos
+
 ### Inicar projeto 
 ```bash
 # para iniciar um projeto
@@ -28,12 +49,6 @@ npx tsc --init
 ```
 typeorm.io
 ```
-### Run application
-```bash
-# Necessario fazer as configuracoes do banco localmente (postgres)
-# Outra opcao seria utilizar o docker compose
-yarn dev
-```
 
 ### Migration:generate
 ```bash
@@ -44,14 +59,4 @@ yarn dev
 "migration:run": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:run"
 
 # Coloque essas linhas no scripts ./package.json
-```
-
-### Gerar file migrations.. run  
-```bash
-yarn migration:generate
-```
-
-### Inserir no banco as migrations .. run  
-```bash
-yarn migration:run
 ```
