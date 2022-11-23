@@ -30,7 +30,7 @@ typeorm.io
 ```
 ### Run application
 ```bash
-# Necessario fazer as configuracoes do banco localmente 
+# Necessario fazer as configuracoes do banco localmente (postgres)
 # Outra opcao seria utilizar o docker compose
 yarn dev
 ```
@@ -39,5 +39,11 @@ yarn dev
 ```bash
 # Gerar automaticamente uma migration no banco de dados 
 # Coloque essa linha no scripts ./package.json
-"migration:generate": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:generate ./src/migrations/default"
+"migration:generate": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:generate ./src/migrations/default",
+"migration:run": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:run"
+```
+
+### Gerar as migrations.. run  
+```bash
+yarn migration:generate
 ```
