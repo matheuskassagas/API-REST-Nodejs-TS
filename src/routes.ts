@@ -17,6 +17,7 @@ routes.post('/room/:idRoom/create', new RoomController().roomSubject)
 routes.get('/room/:id', new RoomController().getRoom)
 routes.get('/video/:id', new RoomController().getVideo)
 routes.get('/subject/:id', new SubjectController().getSubject)
+routes.get('/room', new RoomController().listRooms)
 
 
 export default routes

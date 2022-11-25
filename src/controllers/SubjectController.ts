@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import { SubjectRepository } from "../repositories/SubjectRepository";
 
 export class SubjectController {
+
+  // # METHOD POST # 
   async create(req: Request, res: Response){ // EndPoint Create
     const {name} = req.body
 
@@ -21,6 +23,8 @@ export class SubjectController {
     //return res.json('controller criado')
   }
 
+
+  // # METHOD GET # 
   async getSubject(req: Request, res: Response){
     const { id } = req.params
     
