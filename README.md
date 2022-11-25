@@ -71,6 +71,8 @@ $ yarn dev
 ```bash
 # POST
 url - localhost:3000/room
+
+# BODY .JSON
 {
   "name": "Nodejs",
   "description": "Class of Programing API with NodeJs"
