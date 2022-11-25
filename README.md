@@ -47,6 +47,11 @@ DB_NAME=develop
 PORT=3000
 ```
 
+### Download dependences
+```bash
+yarn install
+```
+ 
 ### Create file migrations.. run  
 ```bash
 # Run this command to create an arquive of entities
