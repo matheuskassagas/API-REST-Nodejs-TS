@@ -13,7 +13,7 @@ export class Video{
     url: string
 
     //Relacionamentos entre classes
-    @ManyToOne(() => Room, room => room.videos)
+    @ManyToOne(() => Room, (room) => room.videos)
     @JoinColumn({name: 'room_id'}) //Nomeando a FK na tabela do banco
     room: Room
 }

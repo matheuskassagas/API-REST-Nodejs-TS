@@ -2,16 +2,19 @@
 ```bash
 # Necessario fazer as configuracoes do banco localmente (postgres)
 # Outra opcao seria utilizar o docker compose
-yarn dev
+$ docker-compose up -d
+
+# Start application 
+$ yarn dev
 ```
 
 ### Gerar file migrations.. run  
 ```bash
 # Rodar esse comando sempre que criar algum atributo em alguma entidade
-yarn migration:generate
+$ yarn migration:generate
 
 # Inserir no banco as migrations .. run
-yarn migration:run
+$ yarn migration:run
 ```
 
 ---
@@ -22,27 +25,29 @@ yarn migration:run
 ### Inicar projeto 
 ```bash
 # para iniciar um projeto
-yarn init -y
+$ yarn init -y
 ```
 
 ### Bibliotecas utilizadas
 ```bash
 # desenvolvimento
-yarn add -D typescript nodemon ts-node @types/express @types/node
+$ yarn add -D typescript nodemon ts-node @types/express @types/node
 
 # producao
-yarn add express pg typeorm dotenv reflect-metadata
+$ yarn add express pg typeorm dotenv reflect-metadata
 ```
 
 ### Inicializar o TS 
 ```bash
-npx tsc --init
+$ npx tsc --init
 ```
 
 ### Package.json 
 ```bash
 # execucao em ambiente dev com nodemon que executa outro comando em TS
 "dev": "nodemon --exec ts-node ./src/index.ts" 
+
+# Coloque essa linha no scripts ./package.json
 ```
 
 ### Docs 

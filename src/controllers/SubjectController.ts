@@ -20,4 +20,20 @@ export class SubjectController {
     }
     //return res.json('controller criado')
   }
+
+  async getSubject(req: Request, res: Response){
+    const { id } = req.params
+    
+    try{
+      const subject = await SubjectRepository.findOneBy({id: Number(id)})
+      if (!id){
+      return res.status(404).json({message: 'Id nao encontrado'})
+      }
+      return res.status(201).json(subject)
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({message: 'Internal Server Error'})
+    }
+  }
+
 }
