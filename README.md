@@ -1,34 +1,79 @@
-### Run application
-```bash
-# Necessario fazer as configuracoes do banco localmente (postgres)
-# Outra opcao seria utilizar o docker compose
-$ docker-compose up -d
+### First project NodeJs with TypeScript
+- it's an API that I'm gonna continue doing many updates on it. It's a simple API but is something big to me,
+- beacause is a new Language. If you want to test you should do a "git clone" on your computer and 
+- configure a Postgresql. There is an arquive on the project that is "docker-compose", You don't need donwload Postgresql,
+- just run the arquive.
+- Following the steps ...
 
-# Start application 
-$ yarn dev
+### Run docker (database)
+```bash
+$ docker-compose up -d
 ```
 
-### Gerar file migrations.. run  
+### Access your browser
 ```bash
-# Rodar esse comando sempre que criar algum atributo em alguma entidade
+# Put on url
+localhost:8000
+
+# login
+admin@admin.com
+
+#password
+postgres
+```
+
+### Create a Database
+- Configure a db
+```bash
+# database's name
+develop
+
+# USER
+postgres
+
+# PASSWORD
+secret
+```
+
+### Create file migrations.. run  
+```bash
+# Run this command to create an arquive of entities
 $ yarn migration:generate
 
-# Inserir no banco as migrations .. run
+# Run this command to generate the entities on database
 $ yarn migration:run
 ```
 
+### Start application 
+```
+$ yarn dev
+```
+
+### Use Postman PORT 3000
+- ./routes.ts it's all of the endpoits that you can use
+```bash
+# POST
+url - localhost:3000/room
+{
+  "name": "Nodejs",
+  "description": "Class of Programing API with NodeJs"
+}
+
+# GET 
+url - localhost:3000/room
+```
 ---
 
-## Primeiros passos para iniciar o projeto
+## First steps to start the project
 - Caso baixar o projeto, não é necessário utilizar esses comandos
 
-### Inicar projeto 
+### Start project 
 ```bash
 # para iniciar um projeto
 $ yarn init -y
 ```
 
-### Bibliotecas utilizadas
+### Used libraries
 ```bash
 # desenvolvimento
 $ yarn add -D typescript nodemon ts-node @types/express @types/node
