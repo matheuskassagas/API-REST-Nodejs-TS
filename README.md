@@ -15,17 +15,17 @@ $ docker-compose up -d
 # Put on url
 localhost:8000
 
-# login
+# LOGIN
 admin@admin.com
 
-#password
+# PASSWORD
 postgres
 ```
 
 ### Create a Database
 - Configure a db
 ```bash
-# database's name
+# DATABASE'S NAME
 develop
 
 # USER
