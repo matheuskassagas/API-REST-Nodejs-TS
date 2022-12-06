@@ -1,9 +1,11 @@
-### First project NodeJs with TypeScript
+## First project NodeJs with TypeScript
 - It's an API that I'm gonna continue doing many updates on it. It's a simple API but is something big to me, 
 because is a new Language. If you want to test you should do a "git clone" on your computer and 
 configure a Postgresql. There is an arquive on the project that is "docker-compose", You don't need donwload Postgresql,
 just run the arquive.
 Following the steps ...
+
+## Status: In Process
 
 ### Run docker (database)
 ```bash
