@@ -110,6 +110,9 @@ $ yarn add -D typescript nodemon ts-node @types/express @types/node
 
 # producao
 $ yarn add express pg typeorm dotenv reflect-metadata
+
+# A
+$ yarn add express-async-errors   
 ```
 
 ### Inicializar o TS 

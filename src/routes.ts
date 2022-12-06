@@ -2,17 +2,10 @@ import { Request, Response, Router } from "express";
 import { RoomController } from "./controllers/RoomController";
 import { SubjectController } from "./controllers/SubjectController";
 import fs from 'fs'
-import { ApiError } from "./helpers/api-erros";
+import { ApiError, BadRequestError } from "./helpers/api-erros";
 
 
 const routes = Router()
-
-// ERROR EXCEPTION
-routes.get('/', (req: Request, res: Response) => {
-  throw new ApiError('Erro Lancado', 500) // class api-errors
-
-  return res.json('ok')
-})
 
 // METHOD POSTS
 routes.post('/subject', new SubjectController().create)
