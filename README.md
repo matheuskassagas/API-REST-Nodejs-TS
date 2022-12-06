@@ -7,6 +7,20 @@ Following the steps ...
 
 ## Status: In Process
 
+### Create an arquive .env
+```bash
+# put this enviroment variables on it
+
+# how to see your ip "ip  addr show"
+DB_HOST="YOUR IP" or "localhost"
+DB_PORT=5432
+DB_USER=postgres
+DB_PASS=secret
+DB_NAME=develop
+
+PORT=3000
+```
+
 ### Run docker (database)
 ```bash
 $ docker-compose up -d
@@ -37,18 +51,12 @@ postgres
 secret
 ```
 
-### Create an arquive .env
+- If your are using a docker, run again 
 ```bash
-# put this on it
-DB_HOST=localhost
-DB_PORT=5432
-DB_USER=postgres
-DB_PASS=secret
-DB_NAME=develop
-
-PORT=3000
+$ docker-compose up -d
 ```
 
+- If your are using locally, following the commands
 ### Download dependences
 ```bash
 yarn install
@@ -69,7 +77,7 @@ $ yarn dev
 ```
 
 ### Use Postman PORT 3000
-- ./routes.ts it's all of the endpoits that you can use
+- On file ./routes.ts it's all of the endpoits that you can use
 ```bash
 # POST
 url - localhost:3000/room
@@ -85,7 +93,8 @@ url - localhost:3000/room
 ```
 ---
 
-## First steps to start the project
+
+## How to start a new project
 - Caso baixar o projeto, não é necessário utilizar esses comandos
 
 ### Start project 
