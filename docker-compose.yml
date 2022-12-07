@@ -25,11 +25,10 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: secret
       PGDATA: /var/lib/postgresql/data
-  
   node:
     build: .
     ports:
       - 3000:3000
     depends_on: 
-      - "pgadmin"
+      - "postgres"
     command: "$RUN_APPLICATION"

@@ -143,3 +143,5 @@ typeorm.io
 
 # Coloque essas linhas no scripts ./package.json
 ```
+
+- https://www.youtube.com/watch?v=SnxAq9ktyuo
