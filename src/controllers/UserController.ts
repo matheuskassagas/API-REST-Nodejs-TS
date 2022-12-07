@@ -8,7 +8,5 @@ export class UserController {
     const newUser = UserRepository.create({name, email, password})
     await UserRepository.save(newUser)
     return res.status(201)
-
-
   }
 }

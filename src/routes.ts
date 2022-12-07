@@ -13,7 +13,7 @@ routes.post('/subject', new SubjectController().create)
 routes.post('/room', new RoomController().create)
 routes.post('/room/:idRoom', new RoomController().createVideo)
 routes.post('/room/:idRoom/create', new RoomController().roomSubject)
-routes.post('/user', new UserController().create)
+routes.post('/users', new UserController().create)
 
 // METHOD GETS
 routes.get('/room/:id', new RoomController().getRoom)
