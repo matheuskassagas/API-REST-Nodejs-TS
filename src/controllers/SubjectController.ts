@@ -18,7 +18,7 @@ export class SubjectController {
   }
 
   // # METHOD GET # 
-  async getSubject(req: Request, res: Response){
+  async listById(req: Request, res: Response){
     const { id } = req.params
     const subject = await SubjectRepository.findOneBy({id: Number(id)})
     if (!id){
