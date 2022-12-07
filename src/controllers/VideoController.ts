@@ -5,7 +5,8 @@ import { VideoRepository } from "../repositories/VideoRepository"
 
 export class VideoController {
 
-  async createVideo(req: Request, res: Response){ // cria um video relacionando com uma room 
+  //
+  async createByIdRoom(req: Request, res: Response){ // cria um video relacionando com uma room 
   const {title, url} = req.body
   const { idRoom } = req.params
   const room = await RoomRepository.findOneBy({id: Number(idRoom)}) //faz uma busca se ja existe a room
@@ -21,6 +22,7 @@ export class VideoController {
   return res.status(201).json(newVideo) // retorn status e objeto criado
 }
 
+  // 
   async listById (req: Request, res: Response){
     const { id } = req.params
     const video = await VideoRepository.findOneBy({id: Number(id)})

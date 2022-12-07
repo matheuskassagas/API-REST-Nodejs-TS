@@ -41,35 +41,4 @@ export class RoomController {
     })
     return res.json(room)
   }
-
-
-
-    // # METHOD POST # | endPoint /room/id/create .json to get an object room 
-    async roomSubject(req: Request, res: Response) {
-      const { subject_id } = req.body
-      const { idRoom } = req.params
-      const room = await RoomRepository.findOneBy({ id: Number(idRoom) })
-  
-      if (!room) {
-        throw new NotFoundError('Id not Found')
-      }
-  
-      const subject = await RoomRepository.findOneBy({
-        id: Number(subject_id),
-      })
-  
-      if (!subject) {
-        throw new NotFoundError('Id not Found')
-      }
-  
-      const roomUpdate = {
-        ...room,
-        subjects: [subject],
-      }
-  
-      await RoomRepository.save(roomUpdate)
-  
-      return res.status(200).json(room)
-    }
-
-  }
+}

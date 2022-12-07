@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import { NotFoundError } from "../helpers/api-erros";
+import { RoomRepository } from "../repositories/RoomRepository";
 import { SubjectRepository } from "../repositories/SubjectRepository";
 
 export class SubjectController {
 
-  // # METHOD POST # 
   async create(req: Request, res: Response){ // EndPoint Create
     const {name} = req.body
 
@@ -17,7 +17,31 @@ export class SubjectController {
 
   }
 
-  // # METHOD GET # 
+  async createByIdRoom(req: Request, res: Response) {
+    const { idSubject } = req.body
+    const { idRoom } = req.params
+    const room = await RoomRepository.findOneBy({ id: Number(idRoom) })
+
+    if (!room) {
+      throw new NotFoundError('Id not Found')
+    }
+
+    const subject = await RoomRepository.findOneBy({ id: Number(idSubject) })
+
+    if (!subject) {
+      throw new NotFoundError('Id not Found')
+    }
+
+    const roomUpdate = {
+      ...room,
+      subjects: [subject],
+    }
+
+    await RoomRepository.save(roomUpdate)
+
+    return res.status(200).json(room)
+  }
+
   async listById(req: Request, res: Response){
     const { id } = req.params
     const subject = await SubjectRepository.findOneBy({id: Number(id)})

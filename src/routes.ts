@@ -23,8 +23,6 @@ routes.get('/users', new UserController().listUsers)
 // ==================== METHODS ROOMS ==================== \\
 // CREATE ROOM
 routes.post('/room', new RoomController().create)
-// UPDATE ROOM WITH RELATION
-routes.post('/room/:idRoom/create', new RoomController().roomSubject)
 // GET ROOM BY ID
 routes.get('/room/:id', new RoomController().listById)
 // GET ROOMS
@@ -32,13 +30,14 @@ routes.get('/rooms', new RoomController().listRooms)
 
 
 // ==================== METHODS VIDEOS ==================== \\
-routes.post('/video/:idRoom', new VideoController().createVideo)
+routes.post('/video/:idRoom', new VideoController().createByIdRoom)
 routes.get('/video/:id', new VideoController().listById)
 
 
 
 // ==================== METHODS SUBJECTS ==================== \\
 routes.post('/subject', new SubjectController().create)
+routes.post('/subject/:idRoom', new SubjectController().createByIdRoom)
 routes.get('/subject/:id', new SubjectController().listById)
 
 
