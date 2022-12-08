@@ -28,4 +28,20 @@ export class UserController {
     return res.json(usersFound)
   }
 
+  async updateUser (req: Request, res: Response){
+    const { id } = req.params
+    const {name, email, password} = req.body
+    const userToUpdate = await UserRepository.findOneBy({ id: Number(id) })
+
+     if ( userToUpdate != undefined){
+      userToUpdate.name = name
+      userToUpdate.email = email
+      userToUpdate.password = password
+      await UserRepository.save(userToUpdate)
+    }
+
+    return res.status(201).json(this.create)  
+
+  }
+
 }

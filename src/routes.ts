@@ -1,8 +1,6 @@
-import { Request, Response, Router } from "express";
+import { Router } from "express";
 import { RoomController } from "./controllers/RoomController";
 import { SubjectController } from "./controllers/SubjectController";
-import fs from 'fs'
-import { ApiError, BadRequestError } from "./helpers/api-erros";
 import { UserController } from "./controllers/UserController";
 import { VideoController } from "./controllers/VideoController";
 
@@ -17,7 +15,7 @@ routes.get('/user/:id', new UserController().listById)
 // GET USERS
 routes.get('/users', new UserController().listUsers)
 // UPDATE USER
-//routes.post('/user/:id', new UserController().update)
+routes.put('/user/:id', new UserController().updateUser)
 
 
 // ==================== METHODS ROOMS ==================== \\
@@ -39,9 +37,5 @@ routes.get('/video/:id', new VideoController().listById)
 routes.post('/subject', new SubjectController().create)
 routes.post('/subject/:idRoom', new SubjectController().createByIdRoom)
 routes.get('/subject/:id', new SubjectController().listById)
-
-
-
-
 
 export default routes
