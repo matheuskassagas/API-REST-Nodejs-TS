@@ -10,6 +10,7 @@ const routes = Router()
 
 // ==================== LOGIN ==================== \\
 routes.post('/login', new LoginController().login)
+routes.get('/profile', new LoginController().getProfile)
 
 // ==================== METHODS USERS ==================== \\
 // CREATE USER

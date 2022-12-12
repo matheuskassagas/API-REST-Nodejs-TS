@@ -1,9 +1,10 @@
 import { Request, Response } from "express";
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
-import { BadRequestError, NotFoundError } from "../helpers/api-erros";
+import { BadRequestError, NotFoundError, UnauthorizedError } from "../helpers/api-erros";
 import { UserRepository } from "../repositories/UserRepository";
-import { User } from "../entities/User";
+
+
 
 export class LoginController {
   async login(req: Request, res: Response){
@@ -29,5 +30,10 @@ export class LoginController {
       user: userLogin,
       token: token
     })
+  }
+
+  async getProfile(req: Request, res: Response){
+    //const {password: _, ...loggeUser} = user
+    return res.status(200).json('Authorized')
   }
 }
