@@ -16,6 +16,8 @@ routes.get('/user/:id', new UserController().listById)
 routes.get('/users', new UserController().listUsers)
 // UPDATE USER
 routes.put('/user/:id', new UserController().updateUser)
+// DELETE USER
+routes.delete('/user/:id', new UserController().deleteUser)
 
 
 // ==================== METHODS ROOMS ==================== \\
@@ -25,6 +27,8 @@ routes.post('/room', new RoomController().create)
 routes.get('/room/:id', new RoomController().listById)
 // GET ROOMS
 routes.get('/rooms', new RoomController().listRooms)
+// UPDATE ROOMS
+//routes.put('/room/:id', new RoomController().updateRooms)
 
 
 // ==================== METHODS VIDEOS ==================== \\

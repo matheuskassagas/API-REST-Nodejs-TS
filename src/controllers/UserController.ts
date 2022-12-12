@@ -33,15 +33,30 @@ export class UserController {
     const {name, email, password} = req.body
     const userToUpdate = await UserRepository.findOneBy({ id: Number(id) })
 
-     if ( userToUpdate != undefined){
-      userToUpdate.name = name
-      userToUpdate.email = email
-      userToUpdate.password = password
-      await UserRepository.save(userToUpdate)
+    if (!userToUpdate) {
+      throw new NotFoundError('User not found')
     }
 
-    return res.status(201).json(this.create)  
-
+    if ( userToUpdate != undefined){
+    userToUpdate.name = name
+    userToUpdate.email = email
+    userToUpdate.password = password
+    await UserRepository.save(userToUpdate)
   }
 
+    return res.status(201).json(userToUpdate)  
+  }
+
+  async deleteUser (req: Request, res: Response){
+    const { id } = req.params
+    const userToDelete = await UserRepository.findOneBy({ id: Number(id) })
+
+    if (!userToDelete) {
+      throw new NotFoundError('User not found')
+    }
+    if ( userToDelete != undefined){
+    await UserRepository.remove(userToDelete)
+  }
+    return res.status(200).json({ message: "User deleted"})  
+  }
 }
