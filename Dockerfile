@@ -12,6 +12,10 @@ RUN yarn install
 RUN yarn add express pg typeorm dotenv reflect-metadata
 RUN yarn add -D typescript nodemon ts-node @types/express @types/node
 RUN yarn add express-async-errors
+RUN npm install bcrypt
+RUN npm install -D @types/bcrypt
+RUN npm install jsonwebtoken
+RUN npm install -D @types/jsonwebtoken
 RUN yarn migration:generate
 RUN yarn migration:run
 
