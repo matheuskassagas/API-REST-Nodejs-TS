@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { BadRequestError, NotFoundError } from "../helpers/api-erros";
 import { UserRepository } from "../repositories/UserRepository";
+import bcrypt from 'bcrypt'
 
 export class UserController {
   async create (req: Request, res: Response){
