@@ -13,14 +13,15 @@ export class UserController {
     }
     
     const hashPassword = await bcrypt.hash(password, 10)
-    
+
     const newUser = UserRepository.create({
       name, 
       email, 
       password: hashPassword})
 
     await UserRepository.save(newUser)
-    return res.status(201).json(this.create)
+    const {password: _, ...user} = newUser // remove o password do response
+    return res.status(201).json(user)
   }
 
   async listById (req: Request, res: Response){
