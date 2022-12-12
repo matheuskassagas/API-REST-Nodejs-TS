@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { LoginController } from "./controllers/LoginController";
 import { RoomController } from "./controllers/RoomController";
 import { SubjectController } from "./controllers/SubjectController";
 import { UserController } from "./controllers/UserController";
@@ -7,9 +8,12 @@ import { VideoController } from "./controllers/VideoController";
 
 const routes = Router()
 
+// ==================== LOGIN ==================== \\
+routes.post('/login', new LoginController().login)
+
 // ==================== METHODS USERS ==================== \\
 // CREATE USER
-routes.post('/user', new UserController().create)
+// ==================== METHODS USERS ==================== \\
 // GET USER BY ID
 routes.get('/user/:id', new UserController().listById)
 // GET USERS

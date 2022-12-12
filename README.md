@@ -13,10 +13,15 @@ Following the steps ...
 
 # how to see your ip "ip  addr show"
 DB_HOST="YOUR IP" or "localhost"
+
 DB_PORT=5432
 DB_USER=postgres
 DB_PASS=secret
 DB_NAME=develop
+
+JWT_PASSWORD=
+
+RUN_APPLICATION="yarn dev"
 
 PORT=3000
 ```
@@ -118,7 +123,7 @@ $ yarn add express-async-errors
 $ npm install bcrypt
 $ npm install -D @types/bcrypt
 
-# JWT (token)
+# JWT (token) / jwt.io
 $ npm install jsonwebtoken
 $ npm install -D @types/jsonwebtoken
 ```
