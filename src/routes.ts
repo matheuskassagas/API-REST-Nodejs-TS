@@ -4,13 +4,14 @@ import { RoomController } from "./controllers/RoomController";
 import { SubjectController } from "./controllers/SubjectController";
 import { UserController } from "./controllers/UserController";
 import { VideoController } from "./controllers/VideoController";
+import { authMiddleware } from "./middlewares/auth";
 
 
 const routes = Router()
 
 // ==================== LOGIN ==================== \\
 routes.post('/login', new LoginController().login)
-routes.get('/profile', new LoginController().getProfile)
+routes.get('/profile', authMiddleware, new LoginController().getProfile)
 
 // ==================== METHODS USERS ==================== \\
 // CREATE USER
