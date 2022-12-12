@@ -33,7 +33,6 @@ export class LoginController {
   }
 
   async getProfile(req: Request, res: Response){
-    //const {password: _, ...loggeUser} = user
     return res.status(200).json('Authorized')
   }
 }
