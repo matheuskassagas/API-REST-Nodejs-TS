@@ -5,7 +5,13 @@ import { UserRepository } from "../repositories/UserRepository";
 export class UserController {
   async create (req: Request, res: Response){
     const {name, email, password} = req.body
+    const userExist = UserRepository.findOneBy({ email })
     const newUser = UserRepository.create({name, email, password})
+
+    if (!userExist) {
+      throw new BadRequestError('User alredy exist')
+    }
+    
     await UserRepository.save(newUser)
     return res.status(201).json(this.create)
   }

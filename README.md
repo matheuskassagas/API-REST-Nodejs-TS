@@ -113,6 +113,10 @@ $ yarn add express pg typeorm dotenv reflect-metadata
 
 # A
 $ yarn add express-async-errors   
+
+# Bcrypt
+$ npm install bcrypt
+$ npm install -D @types/bcrypt
 ```
 
 ### Inicializar o TS 
