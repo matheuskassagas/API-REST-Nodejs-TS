@@ -117,6 +117,10 @@ $ yarn add express-async-errors
 # Bcrypt
 $ npm install bcrypt
 $ npm install -D @types/bcrypt
+
+# JWT (token)
+$ npm install jsonwebtoken
+$ npm install -D @types/jsonwebtoken
 ```
 
 ### Inicializar o TS 

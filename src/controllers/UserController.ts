@@ -31,7 +31,8 @@ export class UserController {
     if (!userFound) {
       throw new NotFoundError('User not found')
     }
-    return res.status(201).json(userFound)
+    const {password: _, ...user} = userFound
+    return res.json(user)
   }
 
   async listUsers (req: Request, res: Response){
@@ -51,14 +52,17 @@ export class UserController {
       throw new NotFoundError('User not found')
     }
 
+    const hashPassword = await bcrypt.hash(password, 10)
+
     if ( userToUpdate != undefined){
     userToUpdate.name = name
     userToUpdate.email = email
-    userToUpdate.password = password
+    userToUpdate.password = hashPassword
     await UserRepository.save(userToUpdate)
   }
 
-    return res.status(201).json(userToUpdate)  
+    const {password: _, ...user} = userToUpdate
+    return res.status(201).json(user)  
   }
 
   async deleteUser (req: Request, res: Response){
