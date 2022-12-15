@@ -6,12 +6,12 @@ export class Subject {
   @PrimaryGeneratedColumn()
   id: number
 
-  @Column({type: 'text'})
+  @Column({ type: 'text' })
   name: string
 
   @ManyToMany(() => Room, room => room.subjects)
   @JoinTable({
-    name: 'room_subject', 
+    name: 'room_subject',
     joinColumn: {
       name: 'room_id',
       referencedColumnName: 'id'
